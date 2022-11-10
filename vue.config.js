@@ -16,5 +16,20 @@ module.exports = {
 		plugins: [
 			new MonacoWebpackPlugin()
 		]
-  }
+  },
+	devServer: {
+		open: true,
+    host: 'localhost',
+    port: 8080,
+    proxy: {
+      '/': {
+        target: 'https://uat.cn-major.cn',
+        changeOrigin: true,
+				secure: true,
+				pathRewrite: {
+					'^/': ''
+				},
+      }
+    }
+	},
 }

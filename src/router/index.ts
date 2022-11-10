@@ -2,6 +2,11 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: "/login",
+    name: "login",
+    component: () => import(/* webpackChunkName: "about" */ "../views/Login/Login.vue")
+  },
+  {
     path: "/",
     name: "layout",
     component: () => import(/* webpackChunkName: "about" */ "../views/Layout/Layout.vue"),
